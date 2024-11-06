@@ -150,7 +150,7 @@ $$
 
 Our objective in backprop is to find $$\frac{\delta J}{\delta W^{[1]}},\frac{\delta J}{\delta b^{[1]}},\frac{\delta J}{\delta W^{[2]}},$$ and $$\frac{\delta J}{\delta b^{[2]}}$$. For concision, we'll write these values as $$dW^{[1]}, db^{[1]}, dW^{[2]},$$and $$db^{[2]}$$. We'll find these values by stepping backwards through our network, starting by calculating $$\frac{\delta J}{\delta A^{[2]}}$$, or $$dA^{[2]}$$. Turns out that this derivative is simply:
 
-$$dA^{[2]} = Y - A^{[2]}$$
+$$dA^{[2]} = A^{[2]}$$ - Y
 
 If you know calculus, you can take the derivative of the loss function and confirm this for yourself. (Hint: $$\hat{y} = A^{[2]}$$)
 
