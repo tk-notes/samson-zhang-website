@@ -140,7 +140,7 @@ $$y$$ is the **one-hot encoding** of the correct label for the training example.
 
 $$\begin{bmatrix} 0 \\ 0 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0 \\ 0 \\ 0 \\ 0 \\  \end{bmatrix}$$
 
-Notice that in our sum $$\sum_{i=0}^{c} y_i \log(\hat{y}_i)$$, $$y_i = 0$$ for all $$i$$ except the correct label. The loss for a given example, then, is just the log of the probability given for the correct prediction. In our example above, $$J(\hat{y}, y) = -\log(y_4) = -\log(0.80) \approx 0.097$$. Notice that, the closer the prediction probability is to 1, the closer the loss is to 0. As the probability approaches 0, the loss approaches $$+\infty$$. By minimizing the cost function, we improve the accuracy of our model. We do so by substracting the derivative of the loss function with respect to each parameter from that parameter over many rounds of graident descent:
+Notice that in our sum $$\sum_{i=0}^{c} y_i \log(\hat{y}_i)$$, $$y_i = 0$$ for all $$i$$ except the correct label. The loss for a given example, then, is just the log of the probability given for the correct prediction. In our example above, $$J(\hat{y}, y) = -\log(y_4) = -\log(0.80) \approx 0.097$$. Notice that, the closer the prediction probability is to 1, the closer the loss is to 0. As the probability approaches 0, the loss approaches $$+\infty$$. By minimizing the cost function, we improve the accuracy of our model. We do so by substracting the derivative of the loss function with respect to each parameter from that parameter over many rounds of gradient descent:
 
 $$W^{[1]} := W^{[1]} - \alpha \frac{\delta J}{\delta W^{[1]}} \\
 b^{[1]} := b^{[1]} - \alpha \frac{\delta J}{\delta b^{[1]}} \\
