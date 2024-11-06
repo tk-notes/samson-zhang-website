@@ -148,13 +148,13 @@ W^{[2]} := W^{[2]} - \alpha \frac{\delta J}{\delta W^{[2]}} \\
 b^{[2]} := b^{[2]} - \alpha \frac{\delta J}{\delta b^{[2]}} \\
 $$
 
-Our objective in backprop is to find $$\frac{\delta J}{\delta W^{[1]}},\frac{\delta J}{\delta b^{[1]}},\frac{\delta J}{\delta W^{[2]}},$$ and $$\frac{\delta J}{\delta b^{[2]}}$$. For concision, we'll write these values as $$dW^{[1]}, db^{[1]}, dW^{[2]},$$and $$db^{[2]}$$. We'll find these values by stepping backwards through our network, starting by calculating $$\frac{\delta J}{\delta A^{[2]}}$$, or $$dA^{[2]}$$. Turns out that this derivative is simply:
+Our objective in backprop is to find $$\frac{\delta J}{\delta W^{[1]}},\frac{\delta J}{\delta b^{[1]}},\frac{\delta J}{\delta W^{[2]}},$$ and $$\frac{\delta J}{\delta b^{[2]}}$$. For concision, we'll write these values as $$dW^{[1]}, db^{[1]}, dW^{[2]},$$and $$db^{[2]}$$. We'll find these values by stepping backwards through our network, starting by calculating $$\frac{\delta J}{\delta Z^{[2]}}$$, or $$dZ^{[2]}$$. Turns out that this derivative is simply:
 
-$$dA^{[2]} = A^{[2]}$$ - Y
+$$dZ^{[2]} = A^{[2]}$$ - Y
 
 If you know calculus, you can take the derivative of the loss function and confirm this for yourself. (Hint: $$\hat{y} = A^{[2]}$$)
 
-From $$dA^{[2]}$$, we can calculate $$dW^{[2]}$$ and $$db^{[1]}$$:
+From $$dZ^{[2]}$$, we can calculate $$dW^{[2]}$$ and $$db^{[1]}$$:
 
 $$dW^{[2]} = \frac{1}{m} dZ^{[2]} A^{[1]T} \\
 dB^{[2]} = \frac{1}{m} \Sigma {dZ^{[2]}}$$
